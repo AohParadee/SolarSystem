@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ระบบสุริยะ (Solar System)</string>
+    <string name="signin_text">ลงทะเบียน</string>
+    <string name="login_text">ลงชื่อเข้าใช้</string>
+    <string name="name">ชื่อ</string>
+    <string name="surname">นามสกุล</string>
+    <string name="student_code">รหัสนักเรียน</string>
+    <string name="teacher_name">ครูประจำวิชา</string>
+    <string name="login_name">ชื่อ</string>
+    <string name="login_student_code">รหัสนักเรียน</string>
+
+</resources>
