@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 /**
  * Created by Aoh on 30/8/2559.
  */
+
 public class MyAlert {
 
     public void myDialog(Context context,
@@ -16,14 +17,14 @@ public class MyAlert {
         builder.setCancelable(false);
         builder.setTitle(strTitle);
         builder.setMessage(strMessage);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("เข้าใจแล้ว", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
             }
         });
-
         builder.show();
+
     }
 
 } // Main Class

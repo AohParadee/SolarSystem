@@ -1,16 +1,16 @@
 package com.example.aoh.solarsystem;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
-    //Explicit
-    private EditText editText, editText2, editText3, editText4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,13 +18,7 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        //Bind Widget
-        editText = (EditText) findViewById(R.id.editText);
-        editText2 = (EditText) findViewById(R.id.editText2);
-        editText3 = (EditText) findViewById(R.id.editText3);
-        editText4 = (EditText) findViewById(R.id.editText4);
-
-
+        //Set font
         Typeface myFont = Typeface.createFromAsset(getAssets(), "THSarabunNew.ttf");
         TextView mySignin = (TextView) findViewById(R.id.signinText);
         TextView myLogin = (TextView) findViewById(R.id.loginText);
@@ -37,6 +31,53 @@ public class MainActivity extends AppCompatActivity {
 
         mySignin.setTypeface(myFont);
         myLogin.setTypeface(myFont);
-    }
-}//main method
+        //End set font
 
+
+    }//main method
+
+    public void clickSignUpMain(View view) {
+        startActivity(new Intent(MainActivity.this, SignUp.class));
+    }
+
+}//main class
+
+class SignUp extends AppCompatActivity {
+
+    //Explicit SignUp
+    private EditText editText, editText2, editText3, editText4;
+    private String nameString, surnameString, studentCodeString, teacherString;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //Bind Widget SignUp
+        editText = (EditText) findViewById(R.id.editText);
+        editText2 = (EditText) findViewById(R.id.editText2);
+        editText3 = (EditText) findViewById(R.id.editText3);
+        editText4 = (EditText) findViewById(R.id.editText4);
+        //End Bind Widget
+
+    public void clickSignUp(View view) {
+
+        //Get Value from Edit Text
+        nameString = editText.getText().toString().trim();
+        surnameString = editText2.getText().toString().trim();
+        studentCodeString = editText3.getText().toString().trim();
+        teacherString = editText4.getText().toString().trim();
+
+        //Check Space
+        if (nameString.equals("") || surnameString.equals("") || studentCodeString.equals("") || teacherString.equals("")) {
+
+            MyAlert myAlert = new MyAlert();
+            myAlert.myDialog(this, "มีช่องว่าง", "กรุณากรอกทุกช่องค่ะ");
+
+        }//if
+
+    }//clickSignUp
+
+}
+
+}//SignUp
