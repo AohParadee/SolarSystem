@@ -8,5 +8,6 @@
     <string name="teacher_name">ครูประจำวิชา</string>
     <string name="login_name">ชื่อ</string>
     <string name="login_student_code">รหัสนักเรียน</string>
+    <string name="solar_learn_text">ระบบสุริยะ</string>
 
 </resources>

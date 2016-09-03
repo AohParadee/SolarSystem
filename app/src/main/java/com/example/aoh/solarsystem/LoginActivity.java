@@ -18,8 +18,9 @@ public class LoginActivity extends AppCompatActivity {
         TextView myLoginName = (TextView) findViewById(R.id.loginName);
         TextView myLoginCode = (TextView) findViewById(R.id.loginCode);
 
-
         myLogin.setTypeface(myFont);
         //End set font
+
     }//main method
+
 }//main class

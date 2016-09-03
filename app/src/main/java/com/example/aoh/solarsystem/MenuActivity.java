@@ -1,7 +1,9 @@
 package com.example.aoh.solarsystem;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -11,5 +13,8 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
     }//main method
 
+    private void clickLearn (View view) {
+        startActivity(new Intent(MenuActivity.this, LearnActivity.class));
+    }
 
 }//main class

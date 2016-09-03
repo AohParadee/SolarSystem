@@ -42,7 +42,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     }//main method
 
-    public void clickSignUp(View view) {
+    private void clickSignUp(View view) {
 
         //Get Value from Edit Text
         nameString = editText.getText().toString().trim();
@@ -56,14 +56,12 @@ public class SignUpActivity extends AppCompatActivity {
             MyAlert myAlert = new MyAlert();
             myAlert.myDialog(this, "ข้อมูลไม่ครบ", "กรุณากรอกข้อมูลให้ครบทุกช่องค่ะ");
 
-        } else {
-
-        }
+        }//end if
 
     }//SignUpActivity
 
-    public void cilckSignUpOk(View view) {
+    private void cilckSignUpOk(View view) {
         startActivity(new Intent(SignUpActivity.this, MenuActivity.class));
-    }
+    }//cilckSignUpOk
 
 }//main class

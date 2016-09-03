@@ -8,6 +8,62 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.aoh.solarsystem.MenuActivity"
-    android:background="@drawable/bg4">
+    android:background="@drawable/bg4"
+    android:onClick="clickLoginMain">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            android:id="@+id/kid_gif" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#c8000000">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:id="@+id/preTestImg"
+                android:src="@drawable/icontest1"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:id="@+id/learnImg"
+                android:layout_weight="1"
+                android:src="@drawable/laern" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:id="@+id/hologramImg"
+                android:src="@drawable/hologram"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:id="@+id/trickImg"
+                android:layout_weight="1"
+                android:src="@drawable/trick" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:id="@+id/postTestImg"
+                android:layout_weight="1"
+                android:src="@drawable/icontest2" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
