@@ -50,17 +50,26 @@ public class SignUpActivity extends AppCompatActivity {
         teacherString = editText4.getText().toString().trim();
 
         //Check Space
-        if (nameString.equals("") || surnameString.equals("") || studentCodeString.equals("") || teacherString.equals("")) {
+        if (checkSpace()) {
 
             MyAlert myAlert = new MyAlert();
             myAlert.myDialog(this, "ข้อมูลไม่ครบ", "กรุณากรอกข้อมูลให้ครบทุกช่องค่ะ");
 
-        }//end if
+        } else {
+            clickSignUppOk();
+        } //end if
 
     }//SignUpActivity
 
-    private void cilckSignUpOk(View view) {
+    private void clickSignUppOk() {
         startActivity(new Intent(SignUpActivity.this, MenuActivity.class));
     }//cilckSignUpOk
+
+    private boolean checkSpace() {
+        return nameString.equals("") ||
+                surnameString.equals("") ||
+                studentCodeString.equals("") ||
+                teacherString.equals(""); //เมื่อมีช่องว่าง
+    }// CheckSpace
 
 }//main class

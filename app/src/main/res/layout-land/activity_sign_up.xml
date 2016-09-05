@@ -135,7 +135,7 @@
                 android:layout_marginLeft="25dp"
                 style="@style/AlertDialog.AppCompat"
                 android:layout_weight="0.16"
-                android:onClick="clickSignUp" />
+                android:onClick="clickSignUpOk" />
 
         </LinearLayout>
 
