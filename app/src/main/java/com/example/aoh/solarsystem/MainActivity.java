@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        MyAlert myAlert = new MyAlert();
-        myAlert.myDialog(this,"นี่คือ My Alert", "เรายังอยู่นะ");
+//        MyAlert myAlert = new MyAlert();
+//        myAlert.myDialog(this,"นี่คือ My Alert", "เรายังอยู่นะ");
 
     }//main method
 

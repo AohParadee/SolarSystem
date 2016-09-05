@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/star1"
                 android:layout_weight="1"
-                android:src="@drawable/laern" />
+                android:src="@drawable/mars" />
 
             <ImageView
                 android:layout_width="wrap_content"

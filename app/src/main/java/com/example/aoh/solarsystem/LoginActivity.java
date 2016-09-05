@@ -1,8 +1,10 @@
 package com.example.aoh.solarsystem;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
@@ -22,5 +24,9 @@ public class LoginActivity extends AppCompatActivity {
         //End set font
 
     }//main method
+
+    private void cilckLoginOk(View view) {
+        startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+    }//cilckSignUpOk
 
 }//main class

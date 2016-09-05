@@ -13,8 +13,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/signin_text"
-        android:id="@+id/signinText"
+        android:text="@string/sign_up_text"
+        android:id="@+id/signUpText"
         android:textSize="25dp"
         android:layout_marginLeft="320dp"
         android:layout_marginTop="40dp"
@@ -29,7 +29,8 @@
         android:baselineAligned="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="false"
+        android:onClick="clickLoginMain">
 
         <LinearLayout
             android:orientation="vertical"
@@ -49,7 +50,9 @@
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:focusableInTouchMode="true"
+                android:fontFamily="  " />
 
             <TextView
                 android:layout_width="90dp"
@@ -125,8 +128,8 @@
             <Button
                 android:layout_width="100dp"
                 android:layout_height="35dp"
-                android:id="@+id/signinButton"
-                android:background="@drawable/signin"
+                android:id="@+id/signUpButton"
+                android:background="@drawable/signup"
                 android:textAlignment="center"
                 android:textSize="15dp"
                 android:layout_marginLeft="25dp"

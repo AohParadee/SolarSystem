@@ -21,13 +21,13 @@ public class SignUpActivity extends AppCompatActivity {
 
         //Set font
         Typeface myFont = Typeface.createFromAsset(getAssets(), "THSarabunNew.ttf");
-        TextView mySignin = (TextView) findViewById(R.id.signinText);
+        TextView mySignup = (TextView) findViewById(R.id.signUpText);
         TextView myName = (TextView) findViewById(R.id.name);
         TextView mySurname = (TextView) findViewById(R.id.surname);
         TextView myStudentCode = (TextView) findViewById(R.id.studentCode);
         TextView myTeacherName = (TextView) findViewById(R.id.teacherName);
 
-        mySignin.setTypeface(myFont);
+        mySignup.setTypeface(myFont);
         //End set font
 
         //Bind Widget SignUp
@@ -38,7 +38,6 @@ public class SignUpActivity extends AppCompatActivity {
         //End Bind Widget
 
         //เรียกใช้ Method
-
 
     }//main method
 
