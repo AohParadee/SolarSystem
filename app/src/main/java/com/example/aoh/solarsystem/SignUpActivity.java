@@ -15,7 +15,6 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText editText, editText2, editText3, editText4;
     public String nameString, surnameString, studentCodeString, teacherString;
     public Button signUpButton;
-    //public TextView showText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +38,20 @@ public class SignUpActivity extends AppCompatActivity {
         editText3 = (EditText) findViewById(R.id.editText3);
         editText4 = (EditText) findViewById(R.id.editText4);
         signUpButton = (Button) findViewById(R.id.signUpButton);
-        //showText = (TextView) findViewById(R.id.showText);
         //End Bind Widget
+
+//        signUpButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+//                intent.putExtra("signUpName", nameString);
+//                intent.putExtra("signUpSurname", surnameString);
+//                intent.putExtra("signUpCode", studentCodeString);
+//                intent.putExtra("signUpTeach", teacherString);
+//                startActivity(intent);
+//            }//onClick
+//
+//        });
 
     }//main method
 
@@ -51,7 +62,6 @@ public class SignUpActivity extends AppCompatActivity {
         surnameString = editText2.getText().toString().trim();
         studentCodeString = editText3.getText().toString().trim();
         teacherString = editText4.getText().toString().trim();
-        //showText.setText("Hello"+nameString);
 
         //Check Space
        if (checkSpace()) {
@@ -59,21 +69,22 @@ public class SignUpActivity extends AppCompatActivity {
            MyAlert myAlert = new MyAlert();
            myAlert.myDialog(this, "ข้อมูลไม่ครบ", "กรุณากรอกข้อมูลให้ครบทุกช่องค่ะ");
 
+       } else if (nameString.equals("Paradee") || studentCodeString.equals("12345")) {
+
+           MyAlert myAlert = new MyAlert();
+           myAlert.myDialog(this, "ข้อมูลซ้ำ", "ชื่อหรือรหัสนี้ถูกใช้ไปแล้ว กรุณากรอกข้อมูลใหม่ค่ะ");
+
        } else {
 
-           Intent intent = new Intent(this, CheckUser.class);
-           //intent.putExtra("nameString", editText);
-           startActivity(intent);
-
            clickSignUpOk();
+
        } // if
 
     }// SignUpActivity
 
     public void clickSignUpOk() {
-        startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
-    }
-
+        startActivity(new Intent(SignUpActivity.this, MenuActivity.class));
+    }//clickSignUpOk
 
     public boolean checkSpace() {
         return nameString.equals("") ||

@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ public class LoginActivity extends AppCompatActivity {
     //Explicit SignUp
     private EditText editText11, editText12;
     public String nameLoginString, codeLoginString;
+    public Button loginButton;
 
 
     @Override
@@ -32,6 +34,17 @@ public class LoginActivity extends AppCompatActivity {
         //Bind Widget SignUp
         editText11 = (EditText) findViewById(R.id.editText11);
         editText12 = (EditText) findViewById(R.id.editText12);
+        loginButton = (Button) findViewById(R.id.loginButton);
+
+//        loginButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+//                intent.putExtra("loginName", nameLoginString);
+//                intent.putExtra("loginCode", codeLoginString);
+//                startActivity(intent);
+//            }//onClick
+//        });
 
     }//main method
 
@@ -47,19 +60,25 @@ public class LoginActivity extends AppCompatActivity {
             MyAlert myAlert = new MyAlert();
             myAlert.myDialog(this, "ข้อมูลไม่ครบ", "กรุณากรอกข้อมูลให้ครบทุกช่องค่ะ");
 
-        } else {
+        } else if (nameLoginString.equals("Paradee") && codeLoginString.equals("12345")) {
+
             clickLoginOk();
+
+        } else {
+
+            MyAlert myAlert = new MyAlert();
+            myAlert.myDialog(this, "ข้อมูลผิด", "ชื่อหรือรหัสผิด กรุณากรอกใหม่ค่ะ");
+
         } // if
 
     }// SignUpActivity
 
     public void clickLoginOk() {
-        startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+        startActivity(new Intent(LoginActivity.this, MenuActivity.class));
     }//clickSignUpOk
 
     public boolean checkSpace() {
-        return nameLoginString.equals("") ||
-                codeLoginString.equals(""); //เมื่อมีช่องว่าง
+        return nameLoginString.equals("") || codeLoginString.equals(""); //เมื่อมีช่องว่าง
     }// CheckSpace
 
 
