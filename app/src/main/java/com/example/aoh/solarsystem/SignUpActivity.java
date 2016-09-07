@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -12,7 +13,9 @@ public class SignUpActivity extends AppCompatActivity {
 
     //Explicit SignUp
     private EditText editText, editText2, editText3, editText4;
-    private String nameString, surnameString, studentCodeString, teacherString;
+    public String nameString, surnameString, studentCodeString, teacherString;
+    public Button signUpButton;
+    //public TextView showText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,37 +38,44 @@ public class SignUpActivity extends AppCompatActivity {
         editText2 = (EditText) findViewById(R.id.editText2);
         editText3 = (EditText) findViewById(R.id.editText3);
         editText4 = (EditText) findViewById(R.id.editText4);
+        signUpButton = (Button) findViewById(R.id.signUpButton);
+        //showText = (TextView) findViewById(R.id.showText);
         //End Bind Widget
-
-        //เรียกใช้ Method
 
     }//main method
 
-    private void clickSignUp(View view) {
+   public void clickSignUp(View view) {
 
         //Get Value from Edit Text
         nameString = editText.getText().toString().trim();
         surnameString = editText2.getText().toString().trim();
         studentCodeString = editText3.getText().toString().trim();
         teacherString = editText4.getText().toString().trim();
+        //showText.setText("Hello"+nameString);
 
         //Check Space
-        if (checkSpace()) {
+       if (checkSpace()) {
 
-            MyAlert myAlert = new MyAlert();
-            myAlert.myDialog(this, "ข้อมูลไม่ครบ", "กรุณากรอกข้อมูลให้ครบทุกช่องค่ะ");
+           MyAlert myAlert = new MyAlert();
+           myAlert.myDialog(this, "ข้อมูลไม่ครบ", "กรุณากรอกข้อมูลให้ครบทุกช่องค่ะ");
 
-        } else {
-            clickSignUppOk();
-        } //end if
+       } else {
 
-    }//SignUpActivity
+           Intent intent = new Intent(this, CheckUser.class);
+           //intent.putExtra("nameString", editText);
+           startActivity(intent);
 
-    private void clickSignUppOk() {
-        startActivity(new Intent(SignUpActivity.this, MenuActivity.class));
-    }//cilckSignUpOk
+           clickSignUpOk();
+       } // if
 
-    private boolean checkSpace() {
+    }// SignUpActivity
+
+    public void clickSignUpOk() {
+        startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+    }
+
+
+    public boolean checkSpace() {
         return nameString.equals("") ||
                 surnameString.equals("") ||
                 studentCodeString.equals("") ||

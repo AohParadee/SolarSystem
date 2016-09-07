@@ -94,7 +94,6 @@
                     android:textColor="@android:color/black" />
 
                 <Button
-                    style="@style/AlertDialog.AppCompat"
                     android:layout_width="80dp"
                     android:layout_height="35dp"
                     android:id="@+id/loginButton"
@@ -102,7 +101,7 @@
                     android:textAlignment="center"
                     android:textSize="15dp"
                     android:layout_marginLeft="35dp"
-                    android:onClick="clickLoginOk" />
+                    android:onClick="clickLogin" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

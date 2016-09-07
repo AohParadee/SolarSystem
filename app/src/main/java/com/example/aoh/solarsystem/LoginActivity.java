@@ -5,9 +5,15 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
+
+    //Explicit SignUp
+    private EditText editText11, editText12;
+    public String nameLoginString, codeLoginString;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +29,39 @@ public class LoginActivity extends AppCompatActivity {
         myLogin.setTypeface(myFont);
         //End set font
 
+        //Bind Widget SignUp
+        editText11 = (EditText) findViewById(R.id.editText11);
+        editText12 = (EditText) findViewById(R.id.editText12);
+
     }//main method
 
-    private void cilckLoginOk(View view) {
-        startActivity(new Intent(LoginActivity.this, MenuActivity.class));
-    }//cilckSignUpOk
+    public void clickLogin(View view) {
+
+        //Get Value from Edit Text
+        nameLoginString = editText11.getText().toString().trim();
+        codeLoginString = editText12.getText().toString().trim();
+
+        //Check Space
+        if (checkSpace()) {
+
+            MyAlert myAlert = new MyAlert();
+            myAlert.myDialog(this, "ข้อมูลไม่ครบ", "กรุณากรอกข้อมูลให้ครบทุกช่องค่ะ");
+
+        } else {
+            clickLoginOk();
+        } // if
+
+    }// SignUpActivity
+
+    public void clickLoginOk() {
+        startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+    }//clickSignUpOk
+
+    public boolean checkSpace() {
+        return nameLoginString.equals("") ||
+                codeLoginString.equals(""); //เมื่อมีช่องว่าง
+    }// CheckSpace
+
+
 
 }//main class
