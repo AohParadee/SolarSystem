@@ -74,13 +74,11 @@ public class LoginActivity extends AppCompatActivity {
     }// SignUpActivity
 
     public void clickLoginOk() {
-        startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+        startActivity(new Intent(LoginActivity.this, Main2Activity.class));
     }//clickSignUpOk
 
     public boolean checkSpace() {
         return nameLoginString.equals("") || codeLoginString.equals(""); //เมื่อมีช่องว่าง
     }// CheckSpace
-
-
 
 }//main class
