@@ -36,16 +36,6 @@ public class LoginActivity extends AppCompatActivity {
         editText12 = (EditText) findViewById(R.id.editText12);
         loginButton = (Button) findViewById(R.id.loginButton);
 
-//        loginButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
-//                intent.putExtra("loginName", nameLoginString);
-//                intent.putExtra("loginCode", codeLoginString);
-//                startActivity(intent);
-//            }//onClick
-//        });
-
     }//main method
 
     public void clickLogin(View view) {

@@ -1,7 +1,9 @@
 package com.example.aoh.solarsystem;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,22 +42,14 @@ public class SignUpActivity extends AppCompatActivity {
         signUpButton = (Button) findViewById(R.id.signUpButton);
         //End Bind Widget
 
-//        signUpButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
-//                intent.putExtra("signUpName", nameString);
-//                intent.putExtra("signUpSurname", surnameString);
-//                intent.putExtra("signUpCode", studentCodeString);
-//                intent.putExtra("signUpTeach", teacherString);
-//                startActivity(intent);
-//            }//onClick
-//
-//        });
-
     }//main method
 
-   public void clickSignUp(View view) {
+//    private void initWidget() {
+//
+//
+//    }
+
+    public void clickSignUp(View view) {
 
         //Get Value from Edit Text
         nameString = editText.getText().toString().trim();
@@ -63,24 +57,51 @@ public class SignUpActivity extends AppCompatActivity {
         studentCodeString = editText3.getText().toString().trim();
         teacherString = editText4.getText().toString().trim();
 
-        //Check Space
-       if (checkSpace()) {
+        showAddStudentDialog();
 
-           MyAlert myAlert = new MyAlert();
-           myAlert.myDialog(this, "ข้อมูลไม่ครบ", "กรุณากรอกข้อมูลให้ครบทุกช่องค่ะ");
-
-       } else if (nameString.equals("Paradee") || studentCodeString.equals("12345")) {
-
-           MyAlert myAlert = new MyAlert();
-           myAlert.myDialog(this, "ข้อมูลซ้ำ", "ชื่อหรือรหัสนี้ถูกใช้ไปแล้ว กรุณากรอกข้อมูลใหม่ค่ะ");
-
-       } else {
-
-           clickSignUpOk();
-
-       } // if
+//        //Check Space
+//       if (checkSpace()) {
+//
+//           MyAlert myAlert = new MyAlert();
+//           myAlert.myDialog(this, "ข้อมูลไม่ครบ", "กรุณากรอกข้อมูลให้ครบทุกช่องค่ะ");
+//
+//       } else if (nameString.equals("Paradee") || studentCodeString.equals("12345")) {
+//
+//           MyAlert myAlert = new MyAlert();
+//           myAlert.myDialog(this, "ข้อมูลซ้ำ", "ชื่อหรือรหัสนี้ถูกใช้ไปแล้ว กรุณากรอกข้อมูลใหม่ค่ะ");
+//
+//       } else {
+//
+//           clickSignUpOk();
+//
+//       } // if
 
     }// SignUpActivity
+
+    private void showAddStudentDialog() {
+        AlertDialog.Builder addStudentAlert = new AlertDialog.Builder(this);
+        addStudentAlert.setTitle("Add New Student to SQLite");
+        addStudentAlert.setMessage("Name : " + nameString + "\n" + "Surname : "
+                + surnameString + "\n" + "Student Code : "
+                + studentCodeString + "Teacher Name : " + teacherString);
+
+        addStudentAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        addStudentAlert.setNegativeButton("NO", new DialogInterface.OnClickListener(){
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        addStudentAlert.show();
+    }
 
     public void clickSignUpOk() {
         startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
