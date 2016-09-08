@@ -83,7 +83,7 @@ public class SignUpActivity extends AppCompatActivity {
     }// SignUpActivity
 
     public void clickSignUpOk() {
-        startActivity(new Intent(SignUpActivity.this, MenuActivity.class));
+        startActivity(new Intent(SignUpActivity.this, Main2Activity.class));
     }//clickSignUpOk
 
     public boolean checkSpace() {

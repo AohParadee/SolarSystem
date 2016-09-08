@@ -145,7 +145,5 @@
         android:layout_height="wrap_content"
         android:id="@+id/showText"
         android:textColor="#f9d508"
-        android:textSize="50dp"
-        android:password="false"
-        android:phoneNumber="false" />
+        android:textSize="50dp" />
 </RelativeLayout>
