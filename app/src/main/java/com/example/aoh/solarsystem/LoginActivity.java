@@ -40,6 +40,13 @@ public class LoginActivity extends AppCompatActivity {
 
     public void clickLogin(View view) {
 
+        final DatabaseClass mydb = new DatabaseClass(this);
+
+        //Bind Widget SignUp
+        editText11 = (EditText) findViewById(R.id.editText11);
+        editText12 = (EditText) findViewById(R.id.editText12);
+        loginButton = (Button) findViewById(R.id.loginButton);
+
         //Get Value from Edit Text
         nameLoginString = editText11.getText().toString().trim();
         codeLoginString = editText12.getText().toString().trim();
