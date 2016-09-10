@@ -1,6 +1,7 @@
 package com.example.aoh.solarsystem;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class LoginActivity extends AppCompatActivity {
     public String nameLoginString, codeLoginString;
     public Button loginButton;
 
+    DatabaseHelper helper = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +42,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void clickLogin(View view) {
 
-        final DatabaseClass mydb = new DatabaseClass(this);
-
-        //Bind Widget SignUp
-        editText11 = (EditText) findViewById(R.id.editText11);
-        editText12 = (EditText) findViewById(R.id.editText12);
-        loginButton = (Button) findViewById(R.id.loginButton);
-
         //Get Value from Edit Text
         nameLoginString = editText11.getText().toString().trim();
         codeLoginString = editText12.getText().toString().trim();
@@ -57,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             MyAlert myAlert = new MyAlert();
             myAlert.myDialog(this, "ข้อมูลไม่ครบ", "กรุณากรอกข้อมูลให้ครบทุกช่องค่ะ");
 
-        } else if (nameLoginString.equals("Paradee") && codeLoginString.equals("12345")) {
+        } else if (view.getId() == R.id.loginButton) {
 
             clickLoginOk();
 
@@ -71,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
     }// SignUpActivity
 
     public void clickLoginOk() {
-        startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+        startActivity(new Intent(LoginActivity.this, MenuActivity.class));
     }//clickSignUpOk
 
     public boolean checkSpace() {
