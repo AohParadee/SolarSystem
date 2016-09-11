@@ -46,7 +46,14 @@
         </activity>
         <activity android:name=".MenuActivity" />
         <activity android:name=".Learn1Activity" />
-        <activity android:name=".LearnActivity"></activity>
+        <activity android:name=".LearnActivity" />
+        <activity android:name=".Learn2Activity" />
+        <activity android:name=".Learn3Activity" />
+        <activity android:name=".Learn4Activity" />
+        <activity android:name=".Learn5Activity" />
+        <activity android:name=".Learn6Activity" />
+        <activity android:name=".Learn7Activity" />
+        <activity android:name=".Learn8Activity"></activity>
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@
             android:textColor="#f6d608"
             android:textStyle="bold"
             android:textSize="25dp"
-            android:layout_marginLeft="175dp" />
+            android:layout_marginLeft="170dp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -35,29 +35,34 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView6"
-                android:src="@drawable/SatStar"
-                android:layout_weight="1" />
+                android:src="@drawable/mercury"
+                android:layout_weight="1"
+                android:nestedScrollingEnabled="false"
+                android:onClick="clickLearn1" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView7"
                 android:layout_weight="1"
-                android:src="@drawable/SatStar" />
+                android:src="@drawable/venus"
+                android:onClick="clickLearn2" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView8"
                 android:layout_weight="1"
-                android:src="@drawable/SatStar" />
+                android:src="@drawable/earth"
+                android:onClick="clickLearn3" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView9"
                 android:layout_weight="1"
-                android:src="@drawable/SatStar" />
+                android:src="@drawable/mars"
+                android:onClick="clickLearn4" />
         </LinearLayout>
 
         <LinearLayout
@@ -70,29 +75,33 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView10"
-                android:src="@drawable/SatStar"
-                android:layout_weight="1" />
+                android:src="@drawable/jupiter"
+                android:layout_weight="1"
+                android:onClick="clickLearn5" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView11"
                 android:layout_weight="1"
-                android:src="@drawable/SatStar" />
+                android:onClick="clickLearn6"
+                android:src="@drawable/saturn" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView12"
                 android:layout_weight="1"
-                android:src="@drawable/SatStar" />
+                android:src="@drawable/uranus"
+                android:onClick="clickLearn7" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView13"
                 android:layout_weight="1"
-                android:src="@drawable/SatStar" />
+                android:src="@drawable/neptune"
+                android:onClick="clickLearn8" />
         </LinearLayout>
 
     </LinearLayout>

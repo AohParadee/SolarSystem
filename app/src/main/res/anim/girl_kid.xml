@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    id = "selected" android:oneshot ="false">
+
+    <item
+        android:drawable="@drawable/girl1"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/girl2"
+        android:duration="100" />
+
+</set>

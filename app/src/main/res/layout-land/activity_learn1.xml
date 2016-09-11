@@ -7,7 +7,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.aoh.solarsystem.LoginActivity"
-    android:background="@drawable/bg4">
+    tools:context="com.example.aoh.solarsystem.Learn1Activity"
+    android:background="@drawable/starbg1">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageView14"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/home"
+        android:layout_marginRight="10dp"
+        android:onClick="clickHome" />
 
 </RelativeLayout>

@@ -16,7 +16,7 @@
         android:text="@string/sign_up_text"
         android:id="@+id/signUpText"
         android:textSize="25dp"
-        android:layout_marginLeft="320dp"
+        android:layout_marginLeft="350dp"
         android:layout_marginTop="40dp"
         android:textColor="#ffffff"
         android:textStyle="bold"
@@ -32,13 +32,19 @@
         android:layout_alignParentStart="false"
         android:onClick="clickLoginMain">
 
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView23"
+            android:src="@drawable/kid"
+            android:layout_marginLeft="20dp" />
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:weightSum="1"
             android:layout_marginTop="100dp"
-            android:layout_marginLeft="250dp"
             android:layout_marginRight="5dp">
 
             <TextView
@@ -134,16 +140,10 @@
                 android:layout_marginLeft="25dp"
                 android:layout_weight="0.16"
                 android:onClick="clickSignUp"
-                android:background="@drawable/signup" />
+                android:background="@drawable/signup_btn" />
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/showText"
-        android:textColor="#f9d508"
-        android:textSize="50dp" />
 </RelativeLayout>
